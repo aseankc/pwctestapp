@@ -5,9 +5,13 @@ Program is implemented using SQLAlchemy for Database operations with MySQL datab
 
 Provided csv file is fetched to load and save in the database.
 
-Root URL renders the list of all companies.
-/restricted yeilds the list of restricted companies.
-To run the project in dev environment
+URL https://pwcwebapp.ts.r.appspot.com tabulates the list of all companies.
+URL https://pwcwebapp.ts.r.appspot.com/restricted tabulates list of restricted companies.
+REST endpoint has been implemented to return the json data to search restricted companies.
+
+
+Follow to run the project in development environment
+
 `$ python3 -m venv env`
 `$ source env/bin/activate`
 `$ pip install -U pip`
