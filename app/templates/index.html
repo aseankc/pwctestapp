@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>index</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+</head>
+
+<body style="background-color: rgba(150, 138, 161, 0.212);">
+    <br/> <br/>
+    <p id="msg-board">     
+    </p>
+    <br/>
+    <h1 align="center">List of Companies in Database</h1>
+    <br/>
+    <div class="container table-responsive">
+        <table id ="result-table" class="table table-sm table-bordered mb-0">
+            <thead class="dark">
+                <tr> 
+                    <th>ID</th>
+                    <th>Business Name</th>                    
+                    <th>Description</th>
+                    <th>Email</th>
+                    <th>Businessnumber</th>
+                    <th>Restricted</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data%}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.description }}</td>
+                    <td>{{ row.email }}</td>
+                    <td>{{ row.businessnumber }}</td>
+                    <td>{{ row.restricted }}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        
+        </div>
+        <script>
+            $(document).ready(function (){
+                $('#result-table').DataTable({
+                    "iDisplayLength": 25
+                });
+            });
+            
+
+        </script>
+</body>
+
+</html>

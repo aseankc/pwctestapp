@@ -1,0 +1,8 @@
+runtime: python39
+entrypoint: gunicorn -b :$PORT app:app
+env_variables:
+  CLOUD_SQL_USERNAME: dbadmin
+  CLOUD_SQL_PASSWORD: dbadmin
+  CLOUD_SQL_DATABASE_NAME: comdata
+  CLOUD_SQL_CONNECTION_NAME: pwcwebapp:australia-southeast1:pwctestdata
+
