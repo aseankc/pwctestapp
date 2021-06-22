@@ -28,11 +28,12 @@ def restricted():
 
 @app.route('/filter',methods=['GET'])
 def filter():
-    company_number = request.args.get('businessnumber',type=int)
+    b_number = request.args.get('businessnumber',type=int)
     company = models.ComData
-    
-    if(company_number):
-        result = company.filter(company.businessnumber)
+    result = company.query.filter(company.businessnumber==b_number).first()
+    if(result):
         return json.jsonify(result.serialize())
+    else: 
+        return "NO Data avialable"
     
 
